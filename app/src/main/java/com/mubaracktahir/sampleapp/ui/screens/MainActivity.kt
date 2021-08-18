@@ -72,7 +72,6 @@ fun MyScreenDesign(context : Context){
     }
 
 }
-g
 @Composable
 fun TextField(content : (String) -> Unit){
 
