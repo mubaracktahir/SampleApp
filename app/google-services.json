@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701266533006",
+    "project_id": "prunny-a6adb",
+    "storage_bucket": "prunny-a6adb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701266533006:android:f3a3755cdddbaac38ac7df",
+        "android_client_info": {
+          "package_name": "com.prunny.android.persistence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701266533006-sm6tfq9plfrqpih5ve6isao2jpf2ua1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9YngWgnQEj1Y0xRpq5CyHsKXlYct2qN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701266533006-sm6tfq9plfrqpih5ve6isao2jpf2ua1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

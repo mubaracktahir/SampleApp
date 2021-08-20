@@ -1,6 +1,3 @@
-package com.mubaracktahir.sampleapp.ui.screens
-
-import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
@@ -15,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mubaracktahir.sampleapp.ui.theme.SampleAppTheme
 
@@ -25,6 +23,15 @@ class MainActivity : ComponentActivity() {
             MyApp {
                 MyScreenDesign(application.applicationContext)
             }
+        }
+    }
+
+
+    @Preview
+    @Composable
+    fun DefaultPreview(){
+        MyApp {
+            MyScreenDesign(application.applicationContext)
         }
     }
 
@@ -44,34 +51,22 @@ fun MyApp(content : @Composable ()->Unit){
 
 @Composable
 fun MyScreenDesign(context : Context){
-    
-    val textToRemember = remember {
-        mutableStateOf("")
-    }
-    
-    val textViewText = remember {
-        mutableStateOf("")
-    }
-    
-    Column(modifier = Modifier.padding(20.dp)
-    ,horizontalAlignment = Alignment.CenterHorizontally
 
-    ) {
-        TextField(){
+    val textToRemember = remember{ mutableStateOf("")}
+    val displayTextToRemember = remember{ mutableStateOf("")}
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        TextField {
             textToRemember.value = it
         }
-        Spacer(modifier = Modifier.padding(10.dp))
-        Button(onClick = { textViewText.value = textToRemember.value
-            Toast.makeText(context, textViewText.value, Toast.LENGTH_SHORT).show()
-        },modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Show Input")
+        Spacer(Modifier.padding(24.dp))
+        Button(onClick = { displayTextToRemember.value = textToRemember.value}) {
+            Text(text = "Touch me!")
         }
-        Spacer(modifier = Modifier.padding(20.dp))
-        Text(text = textViewText.value, style = TextStyle(textAlign = TextAlign.Center) )
+        Spacer(Modifier.padding(24.dp))
+        Text(text = displayTextToRemember.value)
     }
-
 }
+
 @Composable
 fun TextField(content : (String) -> Unit){
 
@@ -86,3 +81,6 @@ fun TextField(content : (String) -> Unit){
         modifier = Modifier.fillMaxWidth()
     )
 }
+
+
+
